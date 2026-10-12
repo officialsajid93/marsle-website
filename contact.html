@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact | MARSLE Electrical Accessories</title>
+<meta name="description" content="MARSLE Electrical Accessories — modular switches, sockets, fan regulators and lamp holders at retail and wholesale prices.">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="MARSLE Electrical Accessories home"><img src="assets/img/logo.png" alt="MARSLE Electrical Accessories"></a>
+    <button class="burger" aria-expanded="false" aria-label="Open menu">Menu</button>
+    <nav class="menu"><a href="index.html">Home</a><a href="products.html">Products</a><a href="about.html">About Us</a><a href="contact.html" aria-current="page">Contact</a></nav>
+    <button class="cartbtn" id="openCart" aria-label="Open cart">Cart <b id="count">0</b></button>
+  </div>
+</header>
+
+<main>
+<div class="banner"><div class="wrap">
+  <div class="crumb"><a href="index.html">Home</a> / Contact</div>
+  <div class="eyebrow">Get in touch</div><h1>Contact Us</h1>
+  <p>For orders, dealer rates or product questions, message us on WhatsApp or send an enquiry.</p>
+</div></div>
+<section class="bulk" id="enquiry">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Electricians · Contractors · Retailers</div>
+      <h2>Contact &amp; Wholesale Enquiry</h2>
+      <div class="info">
+        <div><span class="k">WhatsApp</span><span class="mono" data-shop="phone"></span></div>
+        <div><span class="k">Email</span><span data-shop="email"></span></div>
+        <div><span class="k">Address</span><span data-shop="address"></span></div>
+        <div><span class="k">Hours</span><span data-shop="hours"></span></div>
+      </div>
+      <ul>
+        <li>Dealer rates on carton and box quantities</li>
+        <li>Mixed orders for building and project supply</li>
+        <li>GST invoice with every delivery</li>
+        <li>Credit terms available for regular retailers</li>
+      </ul>
+    </div>
+    <form id="enq" novalidate>
+      <div class="row2">
+        <div><label for="en">Name</label><input id="en" required placeholder="Your name"></div>
+        <div><label for="ep">Mobile</label><input id="ep" required inputmode="tel" placeholder="10-digit number"></div>
+      </div>
+      <div><label for="et">You are a</label>
+        <select id="et"><option>Retailer / Shop owner</option><option>Electrician</option><option>Contractor / Builder</option><option>Home buyer</option></select></div>
+      <div><label for="em">Requirement</label><textarea id="em" rows="4" placeholder="e.g. 6A switch 200 pcs, 5-step regulator 50 pcs"></textarea></div>
+      <button class="btn pri" type="submit" style="border:0">Send Enquiry on WhatsApp</button>
+      <div class="note" id="enqNote" role="status"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="flogo"><img src="assets/img/logo.png" alt="MARSLE Electrical Accessories"></div>
+        <p>Modular switches, sockets, fan regulators and lamp holders for homes, shops and projects.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul><li><a href="index.html">Home</a></li><li><a href="products.html">Products</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul><li><a href="products.html?cat=switch">Switches</a></li><li><a href="products.html?cat=socket">Sockets</a></li><li><a href="products.html?cat=regulator">Fan Regulators</a></li><li><a href="products.html?cat=other">Holders &amp; Plates</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li class="mono" data-shop="phone"></li><li data-shop="email"></li><li data-shop="address"></li><li data-shop="hours"></li></ul>
+      </div>
+    </div>
+    <div class="copyright">© <span data-year></span> MARSLE Electrical Accessories. All rights reserved.</div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" target="_blank" rel="noopener">WhatsApp Us</a>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Cart" aria-hidden="true">
+  <div class="dhead"><h2>Your Cart</h2><button class="x" id="closeCart">Close</button></div>
+  <div class="items" id="items"></div>
+  <div class="dfoot">
+    <div class="tot"><span>Total</span><span id="total">₹0</span></div>
+    <a class="wa" id="waLink" href="#" target="_blank" rel="noopener" aria-disabled="true">Place Order on WhatsApp</a>
+    <button class="copybtn" id="copyOrder" type="button">Copy Order Details</button>
+    <div class="small" id="cartNote">We will confirm price and delivery after you send the order.</div>
+  </div>
+</aside>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
