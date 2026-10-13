@@ -364,3 +364,12 @@ a.add{text-decoration:none;display:inline-block}
   .founder-photo{max-width:280px}
   .founder-text blockquote::before{font-size:6rem;top:-30px}
 }
+
+/* ---------- product photos + regulator type filter ---------- */
+.pic{min-height:200px}
+.pic img{display:block;height:160px;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,0,0,.14)) drop-shadow(0 0 1px rgba(0,0,0,.25));transition:transform .45s var(--ease)}
+.card:hover .pic img{transform:scale(1.06)}
+.subtools{display:flex;gap:8px;flex-wrap:wrap;margin:-8px 0 22px;padding:12px;border:1px dashed var(--line);border-radius:10px;background:var(--plate)}
+.schip{border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:6px;padding:5px 12px;font-size:.85rem;transition:background-color .2s ease,border-color .2s ease,color .2s ease}
+.schip:hover{border-color:var(--red)}
+.schip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}

@@ -26,7 +26,7 @@
 <div class="banner"><div class="wrap">
   <div class="crumb"><a href="index.html">Home</a> / Products</div>
   <div class="eyebrow">Catalogue</div><h1>Our Products</h1>
-  <p>Switches, sockets, fan regulators and holders. Prices shown are sample rates; the final price is confirmed on order.</p>
+  <p>Switches, sockets, fan regulators and holders. Prices are per piece. Bulk packs get dealer rates; the final price is confirmed on order.</p>
 </div></div>
 <section>
   <div class="wrap">
@@ -36,7 +36,16 @@
       <button class="chip" aria-pressed="false" data-cat="socket">Sockets</button>
       <button class="chip" aria-pressed="false" data-cat="regulator">Fan Regulators</button>
       <button class="chip" aria-pressed="false" data-cat="other">Holders &amp; Plates</button>
-      <div class="search"><input id="q" type="search" placeholder="Search: 16A, bell, 5-step…" aria-label="Search products"></div>
+      <div class="search"><input id="q" type="search" placeholder="Search: 16A, 4 step, 4NM, dimmer…" aria-label="Search products"></div>
+    </div>
+    <div class="subtools" id="subtools" role="group" aria-label="Filter regulators by type" hidden>
+      <button class="schip" aria-pressed="true" data-grp="all">All Types</button>
+      <button class="schip" aria-pressed="false" data-grp="4step">4 Step</button>
+      <button class="schip" aria-pressed="false" data-grp="5step">5 Step</button>
+      <button class="schip" aria-pressed="false" data-grp="7step">7 Step</button>
+      <button class="schip" aria-pressed="false" data-grp="dimmer">Dimmer</button>
+      <button class="schip" aria-pressed="false" data-grp="cooler">Cooler</button>
+      <button class="schip" aria-pressed="false" data-grp="blank">Blank Plates</button>
     </div>
     <div class="grid" id="grid"></div>
     <p class="empty" id="empty" hidden>No products match your search. Try another word.</p>
