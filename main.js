@@ -1,4 +1,4 @@
-/* MARSLE Electrical Accessories — site script
+/* Marsle Electronics — site script
    ===== EDIT YOUR BUSINESS DETAILS HERE ===== */
 const SHOP = {
   whatsapp: "919134901414",            // main WhatsApp number used for orders (91 + 10 digits)
@@ -35,6 +35,7 @@ const PRODUCTS = [
 ];
 
 const $ = s => document.querySelector(s);
+const HAS_CART = !!document.getElementById("drawer");
 const $$ = s => document.querySelectorAll(s);
 const inr = n => "₹" + n.toLocaleString("en-IN");
 const wa = text => "https://wa.me/" + SHOP.whatsapp + (text ? "?text=" + encodeURIComponent(text) : "");
@@ -45,7 +46,7 @@ const save = () => { try { localStorage.setItem("marsle_cart", JSON.stringify(ca
 
 /* fill shop details anywhere on the page */
 $$("[data-shop]").forEach(el => { el.textContent = SHOP[el.dataset.shop]; });
-$$("[data-wa]").forEach(el => { el.href = wa("Hello MARSLE Electrical Accessories, I have an enquiry."); });
+$$("[data-wa]").forEach(el => { el.href = wa("Hello Marsle Electronics, I have an enquiry."); });
 $$("[data-year]").forEach(el => { el.textContent = new Date().getFullYear(); });
 $$("[data-count-cat]").forEach(el => { el.textContent = PRODUCTS.filter(p=>p.cat===el.dataset.countCat).length + " products"; });
 
@@ -76,7 +77,7 @@ function render(){
         <p class="desc">${p.desc}</p>
         <div class="buy">
           <div class="price">${inr(p.price)} <small>/ piece</small></div>
-          <button class="add${cart[p.id]?" in":""}" data-id="${p.id}">${cart[p.id]?"In cart ("+cart[p.id]+")":"Add to Cart"}</button>
+          ${HAS_CART ? `<button class="add${cart[p.id]?" in":""}" data-id="${p.id}">${cart[p.id]?"In cart ("+cart[p.id]+")":"Add to Cart"}</button>` : `<a class="add" href="products.html">View Product</a>`}
         </div>
       </div>
     </article>`).join("");
@@ -89,7 +90,7 @@ const q = $("#q"); if (q) q.addEventListener("input", e => { query = e.target.va
 
 /* ---------- cart ---------- */
 function orderText(){
-  let t = "Hello MARSLE Electrical Accessories, I would like to order:\n", total = 0;
+  let t = "Hello Marsle Electronics, I would like to order:\n", total = 0;
   Object.keys(cart).filter(id=>cart[id]>0).forEach((id,i) => {
     const p = PRODUCTS.find(x=>x.id==id); if (!p) return; total += p.price*cart[id];
     t += `${i+1}. ${p.name} (${p.spec}) x ${cart[id]} = ${inr(p.price*cart[id])}\n`;
@@ -97,6 +98,7 @@ function orderText(){
   return t + `Total: ${inr(total)}`;
 }
 function renderCart(){
+  if (!HAS_CART) return;
   const ids = Object.keys(cart).filter(id => cart[id] > 0 && PRODUCTS.some(p=>p.id==id));
   let total = 0, count = 0;
   $("#items").innerHTML = ids.length ? ids.map(id => {
@@ -127,16 +129,19 @@ document.addEventListener("click", e => {
 });
 
 const openCart = v => {
+  if (!HAS_CART) return;
   $("#drawer").classList.toggle("open", v); $("#scrim").classList.toggle("open", v);
   $("#drawer").setAttribute("aria-hidden", !v);
   document.body.style.overflow = v ? "hidden" : "";
 };
+if (HAS_CART) {
 $("#openCart").onclick = () => openCart(true);
 $("#closeCart").onclick = () => openCart(false);
 $("#scrim").onclick = () => openCart(false);
+}
 document.addEventListener("keydown", e => { if (e.key === "Escape") openCart(false); });
 
-$("#copyOrder").onclick = () => {
+if (HAS_CART) $("#copyOrder").onclick = () => {
   if (!Object.keys(cart).length) { $("#cartNote").textContent = "Add a product to your cart first."; return; }
   const txt = orderText();
   navigator.clipboard.writeText(txt).then(
@@ -161,7 +166,7 @@ if (enq) enq.addEventListener("submit", e => {
 render(); renderCart();
 
 /* ---------- motion ---------- */
-function bump(){ const b = $("#count"); b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump"); }
+function bump(){ const b = $("#count"); if (!b) return; b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump"); }
 const reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 /* header shadow + shrink on scroll */
@@ -172,7 +177,7 @@ window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 /* scroll reveal */
 if ("IntersectionObserver" in window && !reduce) {
   const targets = [];
-  $$("section .head, .cats .cat, .why > div, .split > *, .bulk .wrap > *, .band .wrap > *, footer .cols > *, .strip .wrap > div")
+  $$("section .head, .cats .cat, .why > div, .split > *, .founder-grid > *, .bulk .wrap > *, .band .wrap > *, footer .cols > *, .strip .wrap > div")
     .forEach(el => targets.push(el));
   $$(".grid:not(.swap)").forEach(g => g.querySelectorAll(".card").forEach(c => targets.push(c)));
   document.documentElement.classList.add("js-motion");
