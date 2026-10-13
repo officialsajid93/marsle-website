@@ -26,12 +26,80 @@ const PRODUCTS = [
   {id:6,cat:"socket",name:"16A 3-Pin Socket",spec:"16A · 240V · 2M modular",desc:"For fridge, washing machine and AC points.",price:98},
   {id:7,cat:"socket",name:"6/16A Combi Socket",spec:"6A + 16A · 240V · 2M",desc:"Takes both small and large plugs in one socket.",price:115},
   {id:8,cat:"socket",name:"USB Charger Socket",spec:"5V 2.1A dual USB · 2M",desc:"Charge phones directly without an adapter.",price:340,tag:"New"},
-  {id:9,cat:"regulator",name:"5-Step Fan Regulator",spec:"Up to 100W fan · 2M",desc:"Step-type regulator that runs cool and saves power.",price:165,tag:"Best seller"},
-  {id:10,cat:"regulator",name:"Rotary Fan Regulator",spec:"Up to 100W fan · 2M",desc:"Smooth knob-type speed control.",price:210},
-  {id:11,cat:"regulator",name:"Socket-Type Regulator",spec:"Up to 100W fan · Surface",desc:"Surface-mounted, suits older wiring.",price:120},
   {id:12,cat:"other",name:"Pendant Lamp Holder",spec:"B22 · 6A · Bakelite",desc:"Hanging holder for bulbs.",price:22},
   {id:13,cat:"other",name:"Batten Holder",spec:"B22 · 6A · Angle type",desc:"Mounts directly on wall or ceiling.",price:30},
-  {id:14,cat:"other",name:"8-Module Cover Plate",spec:"8M · White · with frame",desc:"Modular plate and frame for switchboards.",price:85}
+  {id:14,cat:"other",name:"8-Module Cover Plate",spec:"8M · White · with frame",desc:"Modular plate and frame for switchboards.",price:85},
+  /* Fan regulators — from July 2026 price list, rate +60% rounded */
+  {"id":101,"cat":"regulator","grp":"7step","img":"reg-7anp.webp","name":"7 Step Fan Regulator – Pointer Knob","spec":"Model 7ANP · Plate type · ABS · Pack of 20","desc":"Easy-grip knob with a red pointer showing the speed.","price":23},
+  {"id":102,"cat":"regulator","grp":"7step","img":"reg-7afp.webp","name":"7 Step Fan Regulator – Ring Knob","spec":"Model 7AFP · Plate type · ABS · Pack of 20","desc":"Chrome ring knob with a slim pointer for a premium look.","price":23},
+  {"id":103,"cat":"regulator","grp":"7step","img":"reg-7p.webp","name":"7 Step Fan Regulator – Dial Cap","spec":"Model 7P · Plate type · PC · Pack of 20","desc":"Clean flat cap with printed speed numbers.","price":25},
+  {"id":104,"cat":"regulator","grp":"7step","img":"reg-7np.webp","name":"7 Step Fan Regulator – Pointer Knob","spec":"Model 7NP · Plate type · PC · Pack of 20","desc":"Easy-grip knob with a red pointer showing the speed.","price":26},
+  {"id":105,"cat":"regulator","grp":"7step","img":"reg-7fp.webp","name":"7 Step Fan Regulator – Ring Knob","spec":"Model 7FP · Plate type · PC · Pack of 20","desc":"Chrome ring knob with a slim pointer for a premium look.","price":27},
+  {"id":106,"cat":"regulator","grp":"7step","img":"reg-7sp.webp","name":"7 Step Fan Regulator – Trio Knob","spec":"Model 7SP · Plate type · PC · Pack of 20","desc":"Three-wing knob that is easy to turn.","price":27},
+  {"id":107,"cat":"regulator","grp":"7step","img":"reg-7cp.webp","name":"7 Step Fan Regulator – Chrome Ring","spec":"Model 7CP · Plate type · PC · Pack of 20","desc":"Double chrome ring design with a sleek finish.","price":29},
+  {"id":108,"cat":"regulator","grp":"7step","img":"reg-7np-b.webp","name":"7 Step Fan Regulator – Pointer Knob, Black","spec":"Model 7NP-B · Plate type · PC · Pack of 20","desc":"Pointer knob in a glossy black finish for dark switchboards.","price":27},
+  {"id":109,"cat":"regulator","grp":"4step","img":"reg-4p.webp","name":"4 Step Fan Regulator – Dial Cap","spec":"Model 4P · Plate type · PC · Pack of 20","desc":"Clean flat cap with printed speed numbers.","price":44},
+  {"id":110,"cat":"regulator","grp":"4step","img":"reg-4np.webp","name":"4 Step Fan Regulator – Pointer Knob","spec":"Model 4NP · Plate type · PC · Pack of 20","desc":"Easy-grip knob with a red pointer showing the speed.","price":45},
+  {"id":111,"cat":"regulator","grp":"4step","img":"reg-4fp.webp","name":"4 Step Fan Regulator – Ring Knob","spec":"Model 4FP · Plate type · PC · Pack of 20","desc":"Chrome ring knob with a slim pointer for a premium look.","price":46},
+  {"id":112,"cat":"regulator","grp":"4step","img":"reg-4sp.webp","name":"4 Step Fan Regulator – Trio Knob","spec":"Model 4SP · Plate type · PC · Pack of 20","desc":"Three-wing knob that is easy to turn.","price":46},
+  {"id":113,"cat":"regulator","grp":"4step","img":"reg-4cp.webp","name":"4 Step Fan Regulator – Chrome Ring","spec":"Model 4CP · Plate type · PC · Pack of 20","desc":"Double chrome ring design with a sleek finish.","price":48},
+  {"id":114,"cat":"regulator","grp":"5step","img":"reg-5p.webp","name":"5 Step Fan Regulator – Dial Cap","spec":"Model 5P · Plate type · PC · Pack of 10","desc":"Clean flat cap with printed speed numbers.","price":66},
+  {"id":115,"cat":"regulator","grp":"5step","img":"reg-5np.webp","name":"5 Step Fan Regulator – Pointer Knob","spec":"Model 5NP · Plate type · PC · Pack of 10","desc":"Easy-grip knob with a red pointer showing the speed.","price":65},
+  {"id":116,"cat":"regulator","grp":"5step","img":"reg-5cp.webp","name":"5 Step Fan Regulator – Chrome Ring","spec":"Model 5CP · Plate type · PC · Pack of 10","desc":"Double chrome ring design with a sleek finish.","price":68},
+  {"id":117,"cat":"regulator","grp":"dimmer","img":"reg-vp.webp","name":"Fan Dimmer Regulator – Dial Cap","spec":"Model VP · Plate type · PC · Pack of 20","desc":"Clean flat cap with printed speed numbers.","price":36},
+  {"id":118,"cat":"regulator","grp":"dimmer","img":"reg-vnp.webp","name":"Fan Dimmer Regulator – Pointer Knob","spec":"Model VNP · Plate type · PC · Pack of 20","desc":"Easy-grip knob with a red pointer showing the speed.","price":37},
+  {"id":119,"cat":"regulator","grp":"dimmer","img":"reg-vfp.webp","name":"Fan Dimmer Regulator – Ring Knob","spec":"Model VFP · Plate type · PC · Pack of 20","desc":"Chrome ring knob with a slim pointer for a premium look.","price":38},
+  {"id":120,"cat":"regulator","grp":"dimmer","img":"reg-vsp.webp","name":"Fan Dimmer Regulator – Trio Knob","spec":"Model VSP · Plate type · PC · Pack of 20","desc":"Three-wing knob that is easy to turn.","price":38},
+  {"id":121,"cat":"regulator","grp":"dimmer","img":"reg-vcp.webp","name":"Fan Dimmer Regulator – Chrome Ring","spec":"Model VCP · Plate type · PC · Pack of 20","desc":"Double chrome ring design with a sleek finish.","price":41},
+  {"id":122,"cat":"regulator","grp":"dimmer","img":"reg-vnp-b.webp","name":"Fan Dimmer Regulator – Pointer Knob, Black","spec":"Model VNP-B · Plate type · PC · Pack of 20","desc":"Pointer knob in a glossy black finish for dark switchboards.","price":38},
+  {"id":123,"cat":"regulator","grp":"7step","img":"reg-7m.webp","name":"7 Step Fan Regulator – Dial Cap","spec":"Model 7M · Modular · PC · Pack of 20","desc":"Clean flat cap with printed speed numbers.","price":26},
+  {"id":124,"cat":"regulator","grp":"7step","img":"reg-7nm.webp","name":"7 Step Fan Regulator – Pointer Knob","spec":"Model 7NM · Modular · PC · Pack of 20","desc":"Easy-grip knob with a red pointer showing the speed.","price":26},
+  {"id":125,"cat":"regulator","grp":"7step","img":"reg-7fm.webp","name":"7 Step Fan Regulator – Ring Knob","spec":"Model 7FM · Modular · PC · Pack of 20","desc":"Chrome ring knob with a slim pointer for a premium look.","price":28},
+  {"id":126,"cat":"regulator","grp":"7step","img":"reg-7sm.webp","name":"7 Step Fan Regulator – Trio Knob","spec":"Model 7SM · Modular · PC · Pack of 20","desc":"Three-wing knob that is easy to turn.","price":28},
+  {"id":127,"cat":"regulator","grp":"7step","img":"reg-7cm.webp","name":"7 Step Fan Regulator – Chrome Ring","spec":"Model 7CM · Modular · PC · Pack of 20","desc":"Double chrome ring design with a sleek finish.","price":29},
+  {"id":128,"cat":"regulator","grp":"4step","img":"reg-4m.webp","name":"4 Step Fan Regulator – Dial Cap","spec":"Model 4M · Modular · PC · Pack of 20","desc":"Clean flat cap with printed speed numbers.","price":44},
+  {"id":129,"cat":"regulator","grp":"4step","img":"reg-4nm.webp","name":"4 Step Fan Regulator – Pointer Knob","spec":"Model 4NM · Modular · PC · Pack of 20","desc":"Easy-grip knob with a red pointer showing the speed.","price":44,"featured":true},
+  {"id":130,"cat":"regulator","grp":"4step","img":"reg-4fm.webp","name":"4 Step Fan Regulator – Ring Knob","spec":"Model 4FM · Modular · PC · Pack of 20","desc":"Chrome ring knob with a slim pointer for a premium look.","price":45},
+  {"id":131,"cat":"regulator","grp":"4step","img":"reg-4sm.webp","name":"4 Step Fan Regulator – Trio Knob","spec":"Model 4SM · Modular · PC · Pack of 20","desc":"Three-wing knob that is easy to turn.","price":45},
+  {"id":132,"cat":"regulator","grp":"4step","img":"reg-4cm.webp","name":"4 Step Fan Regulator – Chrome Ring","spec":"Model 4CM · Modular · PC · Pack of 20","desc":"Double chrome ring design with a sleek finish.","price":47},
+  {"id":133,"cat":"regulator","grp":"4step","img":"reg-4am.webp","name":"4 Step Fan Regulator – Grip Knob","spec":"Model 4AM · Modular · PC · Pack of 20","desc":"Long red grip knob over a printed speed scale.","price":45},
+  {"id":134,"cat":"regulator","grp":"4step","img":"reg-4bm.webp","name":"4 Step Fan Regulator – Round Cap","spec":"Model 4BM · Modular · PC · Pack of 20","desc":"Minimal round cap with a fan symbol.","price":46},
+  {"id":135,"cat":"regulator","grp":"4step","img":"reg-4dm.webp","name":"4 Step Fan Regulator – Diamond Cap","spec":"Model 4DM · Modular · PC · Pack of 20","desc":"Diamond-shaped cap with a modern look.","price":46},
+  {"id":136,"cat":"regulator","grp":"4step","img":"reg-4dlm.webp","name":"4 Step Fan Regulator – Deluxe Dial","spec":"Model 4DLM · Modular · PC · Pack of 20","desc":"Chrome ring dial with a fine speed scale.","price":48},
+  {"id":137,"cat":"regulator","grp":"4step","img":"reg-4alm.webp","name":"4 Step Fan Regulator – Line Dial","spec":"Model 4ALM · Modular · PC · Pack of 20","desc":"Slim line pointer over a fine speed scale.","price":48},
+  {"id":138,"cat":"regulator","grp":"4step","img":"reg-4nm-bl.webp","name":"4 Step Fan Regulator – Pointer Knob, Black","spec":"Model 4NM-BL · Modular · PC · Pack of 20","desc":"Pointer knob in a glossy black finish for dark switchboards.","price":49},
+  {"id":139,"cat":"regulator","grp":"5step","img":"reg-5m.webp","name":"5 Step Fan Regulator – Dial Cap","spec":"Model 5M · Modular · PC · Pack of 10","desc":"Clean flat cap with printed speed numbers.","price":66},
+  {"id":140,"cat":"regulator","grp":"5step","img":"reg-5nm.webp","name":"5 Step Fan Regulator – Pointer Knob","spec":"Model 5NM · Modular · PC · Pack of 10","desc":"Easy-grip knob with a red pointer showing the speed.","price":67,"featured":true},
+  {"id":141,"cat":"regulator","grp":"5step","img":"reg-5cm.webp","name":"5 Step Fan Regulator – Chrome Ring","spec":"Model 5CM · Modular · PC · Pack of 10","desc":"Double chrome ring design with a sleek finish.","price":70},
+  {"id":142,"cat":"regulator","grp":"5step","img":"reg-5dm.webp","name":"5 Step Fan Regulator – Diamond Cap","spec":"Model 5DM · Modular · PC · Pack of 10","desc":"Diamond-shaped cap with a modern look.","price":68},
+  {"id":143,"cat":"regulator","grp":"5step","img":"reg-5dlm.webp","name":"5 Step Fan Regulator – Deluxe Dial","spec":"Model 5DLM · Modular · PC · Pack of 10","desc":"Chrome ring dial with a fine speed scale.","price":72},
+  {"id":144,"cat":"regulator","grp":"dimmer","img":"reg-vm.webp","name":"Fan Dimmer Regulator – Dial Cap","spec":"Model VM · Modular · PC · Pack of 20","desc":"Clean flat cap with printed speed numbers.","price":37},
+  {"id":145,"cat":"regulator","grp":"dimmer","img":"reg-vnm.webp","name":"Fan Dimmer Regulator – Pointer Knob","spec":"Model VNM · Modular · PC · Pack of 20","desc":"Easy-grip knob with a red pointer showing the speed.","price":37},
+  {"id":146,"cat":"regulator","grp":"dimmer","img":"reg-vfm.webp","name":"Fan Dimmer Regulator – Ring Knob","spec":"Model VFM · Modular · PC · Pack of 20","desc":"Chrome ring knob with a slim pointer for a premium look.","price":38},
+  {"id":147,"cat":"regulator","grp":"dimmer","img":"reg-vsm.webp","name":"Fan Dimmer Regulator – Trio Knob","spec":"Model VSM · Modular · PC · Pack of 20","desc":"Three-wing knob that is easy to turn.","price":38},
+  {"id":148,"cat":"regulator","grp":"dimmer","img":"reg-vcm.webp","name":"Fan Dimmer Regulator – Chrome Ring","spec":"Model VCM · Modular · PC · Pack of 20","desc":"Double chrome ring design with a sleek finish.","price":40},
+  {"id":149,"cat":"regulator","grp":"4step","img":"reg-4pm.webp","name":"4 Step Fan Regulator – Fan Logo Cap","spec":"Model 4PM · Modular · PC · Pack of 20","desc":"Round cap with a fan logo pointer.","price":48},
+  {"id":150,"cat":"regulator","grp":"5step","img":"reg-5pm.webp","name":"5 Step Fan Regulator – Fan Logo Cap","spec":"Model 5PM · Modular · PC · Pack of 10","desc":"Round cap with a fan logo pointer.","price":71},
+  {"id":151,"cat":"regulator","grp":"4step","img":"reg-4j.webp","name":"4 Step Fan Regulator – Dome Cap","spec":"Model 4J · Modular · PC · Pack of 20","desc":"Smooth dome cap with a clean speed layout.","price":48},
+  {"id":152,"cat":"regulator","grp":"5step","img":"reg-5j.webp","name":"5 Step Fan Regulator – Dome Cap","spec":"Model 5J · Modular · PC · Pack of 10","desc":"Smooth dome cap with a clean speed layout.","price":71},
+  {"id":153,"cat":"regulator","grp":"4step","img":"reg-4nw.webp","name":"4 Step Fan Regulator – Classic Dial","spec":"Model 4NW · Plate type · PC · Pack of 20","desc":"Classic round dial with numbered positions.","price":48},
+  {"id":154,"cat":"regulator","grp":"5step","img":"reg-5nw.webp","name":"5 Step Fan Regulator – Classic Dial","spec":"Model 5NW · Plate type · PC · Pack of 10","desc":"Classic round dial with numbered positions.","price":71},
+  {"id":155,"cat":"regulator","grp":"4step","img":"reg-4agm.webp","name":"4 Step Fan Regulator – Grip Knob","spec":"Model 4AGM · Modular · PC · Pack of 20","desc":"Long red grip knob over a fine speed scale.","price":48},
+  {"id":156,"cat":"regulator","grp":"4step","img":"reg-4ri.webp","name":"4 Step Fan Regulator – Indicator Dial","spec":"Model 4RI · Modular · PC · Pack of 20","desc":"Minimal dial with dot indicator.","price":48},
+  {"id":157,"cat":"regulator","grp":"4step","img":"reg-4gg.webp","name":"4 Step Fan Regulator – Ivory Dial","spec":"Model 4GG · Plate type · PC · Pack of 20","desc":"Round dial in an ivory finish.","price":48},
+  {"id":158,"cat":"regulator","grp":"cooler","img":"reg-cn.webp","name":"Cooler Regulator 1000W – Pointer Knob","spec":"Model CN · 1000W · PC · Pack of 10","desc":"Cooler speed regulator with a red pointer knob.","price":76,"featured":true},
+  {"id":159,"cat":"regulator","grp":"cooler","img":"reg-cn.webp","name":"Cooler Regulator 1500W – Pointer Knob","spec":"Model CN · 1500W · PC · Pack of 10","desc":"Cooler speed regulator with a red pointer knob.","price":80},
+  {"id":160,"cat":"regulator","grp":"cooler","img":"reg-cn.webp","name":"Cooler Regulator 2000W – Pointer Knob","spec":"Model CN · 2000W · PC · Pack of 10","desc":"Cooler speed regulator with a red pointer knob.","price":83},
+  {"id":161,"cat":"regulator","grp":"cooler","img":"reg-cn.webp","name":"Cooler Regulator 2300W – Pointer Knob","spec":"Model CN · 2300W · PC · Pack of 10","desc":"Cooler speed regulator with a red pointer knob.","price":89},
+  {"id":162,"cat":"regulator","grp":"cooler","img":"reg-cc.webp","name":"Cooler Regulator 1000W – Chrome Ring","spec":"Model CC · 1000W · PC · Pack of 10","desc":"Cooler speed regulator with a double chrome ring.","price":81},
+  {"id":163,"cat":"regulator","grp":"cooler","img":"reg-cc.webp","name":"Cooler Regulator 1500W – Chrome Ring","spec":"Model CC · 1500W · PC · Pack of 10","desc":"Cooler speed regulator with a double chrome ring.","price":84},
+  {"id":164,"cat":"regulator","grp":"cooler","img":"reg-cc.webp","name":"Cooler Regulator 2000W – Chrome Ring","spec":"Model CC · 2000W · PC · Pack of 10","desc":"Cooler speed regulator with a double chrome ring.","price":87},
+  {"id":165,"cat":"regulator","grp":"cooler","img":"reg-cc.webp","name":"Cooler Regulator 2300W – Chrome Ring","spec":"Model CC · 2300W · PC · Pack of 10","desc":"Cooler speed regulator with a double chrome ring.","price":93},
+  {"id":166,"cat":"regulator","grp":"blank","img":"reg-r-bp.webp","name":"Blank Plate – R Series","spec":"Model R-BP · PC · Pack of 300","desc":"Cover plate to close an unused module slot.","price":2},
+  {"id":167,"cat":"regulator","grp":"blank","img":"reg-j-bp.webp","name":"Blank Plate – J Series","spec":"Model J-BP · PC · Pack of 300","desc":"Cover plate to close an unused module slot.","price":3},
+  {"id":168,"cat":"regulator","grp":"blank","img":"reg-pm-bp.webp","name":"Blank Plate – PM Series","spec":"Model PM-BP · PC · Pack of 300","desc":"Cover plate to close an unused module slot.","price":4},
+  {"id":169,"cat":"regulator","grp":"blank","img":"reg-agm-bp.webp","name":"Blank Plate – AGM Series","spec":"Model AGM-BP · PC · Pack of 300","desc":"Cover plate to close an unused module slot.","price":4},
+  {"id":170,"cat":"regulator","grp":"blank","img":"reg-ri-bp.webp","name":"Blank Plate – RI Series","spec":"Model Ri-BP · PC · Pack of 300","desc":"Cover plate to close an unused module slot.","price":4}
 ];
 
 const $ = s => document.querySelector(s);
@@ -56,21 +124,24 @@ if (burger) burger.onclick = () => { const m = $(".menu"); m.classList.toggle("o
 
 /* ---------- product grid ---------- */
 const grid = $("#grid");
-let cat = "all", query = "";
+let cat = "all", query = "", grp = "all";
+const IMG_BASE = (() => { const l = document.querySelector(".brand img"); return l ? l.getAttribute("src").replace(/logo\.png$/,"") : ""; })();
+const syncSub = () => { const st = $("#subtools"); if (st) st.hidden = cat !== "regulator"; };
 if (grid) {
   const fromUrl = new URLSearchParams(location.search).get("cat");
   if (fromUrl && ["switch","socket","regulator","other"].includes(fromUrl)) cat = fromUrl;
   $$(".chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.cat === cat));
+  syncSub();
 }
 function render(){
   if (!grid) return;
-  const limit = grid.dataset.featured ? PRODUCTS.filter(p => p.tag) : PRODUCTS;
+  const limit = grid.dataset.featured ? PRODUCTS.filter(p => p.tag || p.featured) : PRODUCTS;
   const q = query.trim().toLowerCase();
-  const list = limit.filter(p => (cat==="all"||p.cat===cat) &&
+  const list = limit.filter(p => (cat==="all"||p.cat===cat) && (cat!=="regulator"||grp==="all"||p.grp===grp) &&
     (!q || (p.name+" "+p.spec+" "+p.desc).toLowerCase().includes(q)));
   grid.innerHTML = list.map(p => `
     <article class="card">
-      <div class="pic">${p.tag?`<span class="tag">${p.tag}</span>`:""}${ICONS[p.cat]}</div>
+      <div class="pic">${p.tag?`<span class="tag">${p.tag}</span>`:""}${p.img?`<img src="${IMG_BASE+p.img}" alt="${p.name}" loading="lazy">`:ICONS[p.cat]}</div>
       <div class="body">
         <h3>${p.name}</h3>
         <div class="spec">${p.spec}</div>
@@ -125,7 +196,9 @@ document.addEventListener("click", e => {
   if (dec) { const id = dec.dataset.dec; cart[id]--; if (cart[id]<=0) delete cart[id]; }
   if (inc || dec) { save(); render(); renderCart(); }
   const chip = e.target.closest(".chip");
-  if (chip) { cat = chip.dataset.cat; $$(".chip").forEach(c=>c.setAttribute("aria-pressed", c===chip)); animateGrid = true; render(); }
+  if (chip) { cat = chip.dataset.cat; $$(".chip").forEach(c=>c.setAttribute("aria-pressed", c===chip)); syncSub(); animateGrid = true; render(); }
+  const sc = e.target.closest(".schip");
+  if (sc) { grp = sc.dataset.grp; $$(".schip").forEach(c=>c.setAttribute("aria-pressed", c===sc)); animateGrid = true; render(); }
 });
 
 const openCart = v => {
